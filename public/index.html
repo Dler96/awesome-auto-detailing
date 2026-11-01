@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Awesome Auto Detailing · Book your detailing slot online</title>
+  <meta name="description" content="Professional car wash, interior and paint detailing. Check live availability, customise your package and book your bay online.">
+  <meta name="theme-color" content="#0f0f11">
+  <meta property="og:title" content="Awesome Auto Detailing">
+  <meta property="og:description" content="Check live availability and book your detailing slot online.">
+  <meta property="og:image" content="/assets/logo.webp">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="/config.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/home.js"></script>
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"><i class="streak"></i><i class="streak"></i><i class="streak"></i><i class="streak"></i></div>
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow reveal">Professional car detailing</span>
+          <h1 class="reveal d1"><span class="line">Showroom shine.</span><span class="line shine">Booked in a minute.</span></h1>
+          <p class="hero-lead reveal d2">Pick your car size, build your package, choose an open bay and drive in on time. No queue, no guessing — live availability straight from our workshop.</p>
+          <div class="hero-cta reveal d3">
+            <a class="btn btn-primary btn-lg" href="/book">Book a slot <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="/availability">Check availability</a>
+          </div>
+          <div class="hero-meta reveal d4">
+            <div><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Guaranteed bay</div>
+            <div><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/></svg>Pay at shop or QR</div>
+            <div><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/></svg>Transparent prices</div>
+          </div>
+        </div>
+        <div class="hero-card reveal d2" id="hero-card">
+          <img src="/assets/logo.webp" alt="Awesome Auto Detailing" width="900" height="250">
+          <span class="live-pill" id="open-pill">Checking hours…</span>
+          <div class="next-slot">
+            <small>Next available express slot</small>
+            <strong id="next-slot">Loading…</strong>
+            <a class="btn btn-gold btn-block" href="/availability" id="next-slot-link">See all open times</a>
+          </div>
+        </div>
+      </div>
+      <span class="scroll-cue" aria-hidden="true"></span>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee">
+      <span>Snow foam wash</span><span>Interior deep clean</span><span>Paint polish</span><span>Ceramic protection</span><span>Engine bay</span><span>Headlight restoration</span><span>Odour removal</span>
+      <span>Snow foam wash</span><span>Interior deep clean</span><span>Paint polish</span><span>Ceramic protection</span><span>Engine bay</span><span>Headlight restoration</span><span>Odour removal</span>
+    </div></div>
+
+    <!-- PROMOTIONS -->
+    <section class="section" id="promos-section" hidden>
+      <div class="wrap">
+        <div class="section-head reveal"><div><span class="eyebrow">Latest</span><h2>Promotions &amp; news</h2></div></div>
+        <div class="promo-track reveal d1" id="promos"></div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Our packages</span><h2>Detailing made <span class="accent">simple</span></h2></div>
+          <p>Start with a package, then customise it with add-ons when you book. Prices depend on your vehicle size — no surprises at the counter.</p>
+        </div>
+        <div class="grid-3" id="packages">
+          <div class="skeleton sk-card"></div><div class="skeleton sk-card"></div><div class="skeleton sk-card"></div>
+        </div>
+        <div class="row-end reveal"><a class="btn btn-ghost" href="/services">All services &amp; full price list →</a></div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <div class="section-head reveal"><div><span class="eyebrow">How it works</span><h2>Four steps to a <span class="gold">fresh car</span></h2></div></div>
+        <div class="grid-4 steps">
+          <div class="step-card reveal"><svg class="ico" viewBox="0 0 24 24"><path d="M5 17h14M3 13l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5v4a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg><h3>Tell us your car</h3><p>Choose your vehicle size and plate. Save it to your garage for next time.</p></div>
+          <div class="step-card reveal d1"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/></svg><h3>Build your package</h3><p>Pick a main package and add extras like engine bay, ozone or headlight restore.</p></div>
+          <div class="step-card reveal d2"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><h3>Pick a time</h3><p>See live open slots. We reserve a dedicated bay for the full length of your job.</p></div>
+          <div class="step-card reveal d3"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><h3>Drive in</h3><p>Pay at the shop or by QR. Track, reschedule or cancel from My Bookings.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section">
+      <div class="wrap grid-2" style="align-items:center;gap:56px">
+        <div class="reveal">
+          <span class="eyebrow">Why drivers book with us</span>
+          <h2>Care you can <span class="accent">see</span>, time you can <span class="gold">trust</span></h2>
+          <p class="muted" id="about-text">We treat every car like our own — careful hand washing, quality products and attention to the details other shops skip.</p>
+          <a class="btn btn-primary" href="/book">Book your slot</a>
+        </div>
+        <div class="grid-2" style="gap:28px">
+          <div class="feature reveal d1"><div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24"><path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-7h10v7"/></svg></div><div><h4>Dedicated bays</h4><p>Your booking holds a bay for the whole job, so you never wait in line.</p></div></div>
+          <div class="feature reveal d2"><div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg></div><div><h4>Upfront pricing</h4><p>See the exact price for your car size before you confirm.</p></div></div>
+          <div class="feature reveal d3"><div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/></svg></div><div><h4>Pay your way</h4><p>Cash or card at the counter, or DuitNow QR when you book.</p></div></div>
+          <div class="feature reveal d4"><div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg></div><div><h4>WhatsApp updates</h4><p>Questions or running late? Message us directly from your booking.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOURS & LOCATION -->
+    <section class="section section-alt">
+      <div class="wrap grid-2" style="gap:28px">
+        <div class="card reveal">
+          <span class="eyebrow">Opening hours</span>
+          <h2 style="font-size:36px">When we're open</h2>
+          <ul class="info-list" id="hours"><li class="skeleton">&nbsp;</li><li class="skeleton">&nbsp;</li><li class="skeleton">&nbsp;</li></ul>
+          <p class="hint" id="closed-note"></p>
+        </div>
+        <div class="card reveal d1">
+          <span class="eyebrow">Find us</span>
+          <h2 style="font-size:36px">Visit the workshop</h2>
+          <p class="muted pre" id="address">Address coming soon.</p>
+          <div class="row-end" style="justify-content:flex-start" id="visit-actions"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <div><span class="eyebrow">Ready when you are</span><h2>Your car deserves the awesome treatment.</h2></div>
+          <div class="hero-cta" style="margin:0"><a class="btn btn-primary btn-lg" href="/book">Book now</a><a class="btn btn-ghost btn-lg" href="/services">View prices</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>

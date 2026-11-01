@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Services &amp; Prices · Awesome Auto Detailing</title>
+  <meta name="description" content="Car wash, interior and full detailing packages with add-ons. Prices by vehicle size.">
+  <meta name="theme-color" content="#0f0f11">
+  <meta property="og:title" content="Awesome Auto Detailing">
+  <meta property="og:description" content="Check live availability and book your detailing slot online.">
+  <meta property="og:image" content="/assets/logo.webp">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="/config.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/services.js"></script>
+</head>
+<body data-page="services">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-hero"><div class="wrap">
+      <span class="eyebrow reveal">Services &amp; prices</span>
+      <h1 class="reveal d1">Packages <span class="accent">&amp;</span> add-ons</h1>
+      <p class="reveal d2">Choose your vehicle size to see exact prices. Every package can be customised with add-ons when you book.</p>
+    </div></section>
+    <section class="wrap page-pad">
+      <div class="svc-toolbar"><div><span class="label">Your vehicle size</span><div class="segment" id="size-switch" role="group" aria-label="Vehicle size"></div></div><a class="btn btn-primary" href="/book" id="book-size">Book now</a></div>
+      <p class="hint" id="size-hint" style="margin:-18px 0 26px"></p>
+      <h2 class="reveal">Main packages</h2>
+      <div class="grid-3" id="packages" style="margin-bottom:70px"><div class="skeleton sk-card"></div><div class="skeleton sk-card"></div><div class="skeleton sk-card"></div></div>
+      <div class="section-head reveal" style="margin-bottom:22px"><div><span class="eyebrow">Customise</span><h2>Add-ons</h2></div><p>Add any of these to a package — or book add-ons on their own.</p></div>
+      <div class="table-wrap reveal"><table class="addon-table"><thead><tr><th>Add-on</th><th>Time</th><th>Price</th></tr></thead><tbody id="addons"></tbody></table></div>
+      <div class="section-head reveal" style="margin:70px 0 22px"><div><span class="eyebrow">Compare</span><h2>Full price list</h2></div><p>All prices in Malaysian Ringgit. “—” means not available for that size.</p></div>
+      <div class="table-wrap reveal"><table class="price-matrix" id="matrix"></table></div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>

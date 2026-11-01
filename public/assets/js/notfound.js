@@ -1,0 +1,1 @@
+(() => { window.AAD.start(async () => {}); })();

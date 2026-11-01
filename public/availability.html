@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Check Availability · Awesome Auto Detailing</title>
+  <meta name="description" content="See live open detailing slots for the next few weeks.">
+  <meta name="theme-color" content="#0f0f11">
+  <meta property="og:title" content="Awesome Auto Detailing">
+  <meta property="og:description" content="Check live availability and book your detailing slot online.">
+  <meta property="og:image" content="/assets/logo.webp">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="/config.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/scheduler.js"></script>
+  <script defer src="/assets/js/availability.js"></script>
+</head>
+<body data-page="availability">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-hero"><div class="wrap">
+      <span class="eyebrow reveal">Live availability</span>
+      <h1 class="reveal d1">Find an <span class="gold">open bay</span></h1>
+      <p class="reveal d2">Choose what you need and we'll show every open start time. Green days have plenty of space, amber days are filling up.</p>
+    </div></section>
+    <section class="wrap page-pad">
+      <div class="avail-controls reveal">
+        <div class="field"><label for="need">What do you need?</label><select id="need"></select></div>
+        <div class="chip" id="need-time" style="padding:12px 14px"></div>
+      </div>
+      <div id="scheduler" class="reveal d1"><div class="skeleton" style="height:420px"></div></div>
+      <div class="avail-cta reveal" id="avail-cta">
+        <div><strong id="pick-label">Pick a day and time</strong><div class="muted" id="pick-sub">Times shown in Malaysia time.</div></div>
+        <a class="btn btn-primary" id="continue" href="/book">Continue to booking →</a>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
