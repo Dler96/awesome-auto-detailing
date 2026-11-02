@@ -3,9 +3,9 @@
 window.SITE_CONFIG = {
   businessName: "Awesome Auto Detailing",
   ownerLine: "Wholly owned by Delta Echo Lima Enterprise",
-  supabaseUrl: "https://ktduygghdrhhfddzvyaa.supabase.co",
-  supabaseKey: "sb_publishable_tGsYWs2RTvAEGg9H3bEFCg_JJkrOwZR",
-  whatsapp: "601123510339",            // Your WhatsApp number: country code, no + or spaces
+  supabaseUrl: "https://YOUR_PROJECT.supabase.co",
+  supabaseKey: "YOUR_PUBLIC_PUBLISHABLE_KEY",
+  whatsapp: "60123456789",            // Your WhatsApp number: country code, no + or spaces
   instagram: "",                      // Optional, e.g. "https://instagram.com/yourpage"
   tiktok: "",                         // Optional
   facebook: ""                        // Optional

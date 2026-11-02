@@ -20,7 +20,7 @@
         const price = cat.price(p.id, size);
         return h('article', { class: 'pkg' },
           p.popular ? h('span', { class: 'ribbon', text: 'Popular' }) : null,
-          h('div', { class: 'pkg-media' }, p.image_path ? h('img', { src: A.imageUrl(p.image_path), alt: p.name, loading: 'lazy' }) : icon('sparkle')),
+          h('div', { class: 'pkg-media' }, h('img', { src: A.serviceImage(p), alt: p.name, loading: 'lazy' })),
           h('div', { class: 'pkg-body' },
             h('h3', { text: p.name }), h('p', { text: p.description }),
             h('div', { class: 'pkg-meta' },

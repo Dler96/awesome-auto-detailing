@@ -248,6 +248,15 @@
   }
   const clearCatalogCache = () => { try { sessionStorage.removeItem(CACHE_KEY); } catch { /* ignore */ } };
   const imageUrl = path => path ? db.storage.from('site-images').getPublicUrl(path).data.publicUrl : null;
+  // Built-in photos used when a service has no uploaded photo (matched by name).
+  const STOCK = [[/express|basic|quick/i, 'express-wash'], [/wax|premium|coat|ceramic|seal/i, 'premium-wash-wax'],
+    [/interior|seat|cabin|odou?r|vacuum|shampoo/i, 'interior-deep-clean'], [/full|detail|polish|paint|correction/i, 'full-detailing'],
+    [/rim|tyre|tire|wheel|engine|headlight|glass|water ?mark/i, 'addons']];
+  const serviceImage = svc => {
+    if (svc?.image_path) return imageUrl(svc.image_path);
+    const hit = STOCK.find(([re]) => re.test(svc?.name || ''));
+    return '/assets/img/' + (hit ? hit[1] : svc?.kind === 'addon' ? 'addons' : 'express-wash') + '.webp';
+  };
   async function uploadImage(file, folder) {
     const ext = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' }[file.type];
     if (!ext || file.size > 5 * 1024 * 1024) throw new Error('Choose a JPG, PNG or WebP image up to 5 MB.');
@@ -475,7 +484,7 @@
     cfg, BRAND, TZ, USER_DOMAIN, state, db,
     $, $$, h, icon, money, duration, todayKL, addDays, fmtDate, fmtTime, klParts, fmtStamp,
     STATUS, PAY, badge, waNumber, waLink, shopWa, toast, errMsg, loading, run, check, modal, confirmBox,
-    loadCatalog, clearCatalogCache, imageUrl, uploadImage, uploadReceipt, receiptUrl,
+    loadCatalog, clearCatalogCache, imageUrl, serviceImage, uploadImage, uploadReceipt, receiptUrl,
     hoursSummary, openNow, DAYS, reveal, start, signOut, displayName, renderHeader,
     downloadIcs, bookingSummaryText
   };
